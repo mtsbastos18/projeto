@@ -1,3 +1,112 @@
-.nav-wrapper{
-    background-color: darkslategrey;
+body{
+    background-color:#f3f3f3;
+}
+.topo{
+    background-color:#f3f3f3;
+    color: #000;
+    padding-left: 2rem;
+}
+.user-navbar{
+    text-align: right;
+    cursor: pointer;
+}
+.user-navbar i{
+    font-size: 2rem;
+}
+.user-navbar a{
+    display: inline-block;
+    float: right;
+    margin-top: 0.3rem;
+    padding: 0 0 0 0.5rem;
+}
+.menu{
+    text-align:center;
+    color: #7e7e7e;
+    background-color: #fff !important;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+.navbar-nav i{
+    font-size: 1.5rem;
+    
+}
+.navbar-nav a{
+    max-height: 60px;
+}
+
+h4{
+    margin-bottom: 1.5rem;
+}
+
+.card{
+    border:none;
+}
+
+.dashboard.card-group{
+    font-size: 2rem;
+    color: #777777;
+
+}
+
+.dashboard .card-body span{
+    float: right;
+}
+
+.dashboard .card-body p{
+    font-size: 1rem;
+    margin: 15px 0 0;
+}
+
+.progress {
+    height: 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: unset;    
+}
+.navbar-brand.logo img{
+    width: 100px;
+}
+.nav-item{
+    margin-right: 20px;
+}
+
+.nav-item:hover{
+    color:#fb9e03 !important;
+}
+
+.dropdown-menu{
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+
+@media (min-width: 1200px)
+{
+.container {
+    max-width: 98%;
+}
+}
+
+@media (max-width: 990px)
+{
+    .nav-item p{
+        display: inline;
+    }
+}
+.dataTables_filter{
+    float: right;
+    width: 70%;
+}
+.dataTables_filter label {
+    width: 100%;
+}
+.dataTables_length label {
+    width: 17%;
+}
+.page-item.active .page-link{
+    background-color: #faa71e;
+    border-color:  #faa71e;
+}
+.page-link{
+    color: #000000;
 }
