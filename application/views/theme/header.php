@@ -35,7 +35,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#"><i class="fas fa-home"></i> <p>Dashboard</p> </a>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=base_url('home')?>"><i class="fas fa-home"></i> <p>Dashboard</p> </a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="far fa-edit"></i> <p>Produtos</p> 
