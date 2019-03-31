@@ -26,7 +26,16 @@
     <img src="<?= base_url('assets/img/amazon.png')?>" alt="">
   </a>
   
-  <div class="col-md-2 user-navbar"><i class="fas fa-user-circle"></i> <a> Mateus Bastos</a></div>
+  <div class="col-md-2 user-navbar">
+    <i class="fas fa-user-circle"></i> 
+    <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <?=$this->session->userdata("name")?>
+    </a>
+    <div class="dropdown-menu" >
+          <a class="dropdown-item" href="<?=base_url('user/logout')?>">Sair</a>
+    </div>
+  </div>
+  
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light menu">

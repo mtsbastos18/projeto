@@ -17,40 +17,45 @@
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="<?= base_url('assets/img/user.png')?>" class="brand_logo" alt="Logo">
+                        <img src="<?= base_url('assets/img/user.png')?>" class="brand_logo" alt="Logo"><br>
+                        
 					</div>
-				</div>
+                </div>
+                
 				<div class="d-flex justify-content-center form_container">
-					<form>
-						<div class="input-group mb-3">
+					<form method="post" action="<?= base_url('/user/create')?>">
+                        <div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="text" name="name" class="form-control input_user" value="" placeholder="Nome">
+						</div>
+                        <div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="user" class="form-control input_user" value="" placeholder="Usuário">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="Senha">
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
 						</div>
-					</form>
+					
 				</div>
 				<div class="d-flex justify-content-center mt-3 login_container">
-					<button type="button" name="button" class="btn login_btn">Login</button>
+					<input type="submit" name="button" value="Cadastrar" class="btn login_btn"/>
 				</div>
+				</form>
 				<div class="mt-4">
+					
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
+						<a href="#">Esqueci minha senha</a>
 					</div>
 				</div>
 			</div>
@@ -71,7 +76,7 @@
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #f39c12;
+			background: #ffffff;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -104,7 +109,7 @@
 		}
 		.login_btn {
 			width: 100%;
-			background: #c0392b !important;
+			background: #fb9e06 !important;
 			color: white !important;
 		}
 		.login_btn:focus {
@@ -115,7 +120,7 @@
 			padding: 0 2rem;
 		}
 		.input-group-text {
-			background: #c0392b !important;
+			background: #fb9e06 !important;
 			color: white !important;
 			border: 0 !important;
 			border-radius: 0.25rem 0 0 0.25rem !important;

@@ -26,5 +26,10 @@ class Products extends MY_Controller {
     public function listProducts()
     {
         $this->view('products/listProducts');
-    }
+	}
+	
+	public function Create()
+	{
+		
+	}
 }

@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends MY_Controller {
 
+
+    function __construct() 
+    {
+        parent::__construct();
+
+        
+    }
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,6 +27,12 @@ class Home extends MY_Controller {
 	 */
 	public function index()
 	{
-		$this->view('home/home');
+		$numbers = array(
+			'products' => 350,
+			'orders' => 15,
+			'categories' => 30,
+			'customers' => 1050,
+		);
+		$this->view('home/home',$numbers);
 	}
 }
