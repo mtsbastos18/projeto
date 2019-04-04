@@ -19,7 +19,6 @@ class User extends CI_Controller {
 	{
 		$user = $this->input->post("user");
 		$password =  $this->input->post('password');
-
 		$user = $this->users->login($user, $password);
 		
 		if ($user) {
@@ -71,7 +70,7 @@ class User extends CI_Controller {
 		$encrypted = $this->encryption->encrypt($password);
 		return $encrypted;	
 	}
-	public function decode($password = "332b52c8c32006ce6d8a4bcbe40f546bcf392091fc2e6584b97057e7a87769d4f82ce3488f06eecd1013589bc5f119ebc2491af12c0467e44fd676fe5f127549Q+ByTxUPirGqD3shQVYzKiqJZHAHh5qEGzVpkWAD2Rc=")
+	public function decode($password)
 	{
 		$decrypted = $this->encryption->decrypt($password);
 		return $decrypted;

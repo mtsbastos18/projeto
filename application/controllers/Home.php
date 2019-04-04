@@ -28,7 +28,7 @@ class Home extends MY_Controller {
 	public function index()
 	{
 		$numbers = array(
-			'products' => 350,
+			'products' => 1000,
 			'orders' => 15,
 			'categories' => 30,
 			'customers' => 1050,
