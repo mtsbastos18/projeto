@@ -52,7 +52,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['novo-produto'] = 'product';
 $route['listar-produtos'] = 'product/listProducts';
-$route['novo-usuario'] = 'user/new';
-$route['login'] = 'user';
+$route['login'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

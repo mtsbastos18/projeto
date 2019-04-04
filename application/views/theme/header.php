@@ -43,7 +43,7 @@
       <?=$this->session->userdata("name")?>
     </a>
     <div class="dropdown-menu" >
-          <a class="dropdown-item" href="<?=base_url('user/logout')?>">Sair</a>
+          <a class="dropdown-item" href="<?=base_url('login/logout')?>">Sair</a>
     </div>
   </div>
   
@@ -95,6 +95,15 @@
       <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-chart-bar"></i>
         <p>Relatórios</p>
       </a>
+      </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-chart-bar"></i>
+        <p>Usuários</p>
+      </a>
+      <div class="dropdown-menu" >
+          <a class="dropdown-item" href="#">Listar Usuários</a>
+          <a class="dropdown-item" href="#">Novo Usuário</a>
+      </div>
       </li>
       
     </div>

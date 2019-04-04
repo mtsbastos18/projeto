@@ -20,7 +20,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form method="post" action="<?= base_url('/user/authenticate')?>">
+					<form method="post" action="<?= base_url('/login/authenticate')?>">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>

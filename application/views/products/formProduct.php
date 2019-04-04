@@ -25,11 +25,21 @@
                     <label for="exampleFormControlTextarea1">Descrição do produto</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" required></textarea>
                 </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Imagem do produto</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Selecione um arquivo</label>
+                    </div>
+                </div><br>
                 <div class="form-group">
                     <input type="submit" value="Enviar"  class="btn btn-success">
-                </div>
+                </div>               
                 </form>
             </div>
         </div>
     </div>
 </div>
+

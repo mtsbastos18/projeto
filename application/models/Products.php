@@ -10,12 +10,11 @@ public function insert($product){
 }
                         
 public function getAll(){
-    $this->db->select('*');
+    $this->db->select('products.*, categories.name as category');
     $this->db->from('products');
     $this->db->join('categories', 'products.category_id = categories.id');
     $result = $this->db->get()->result_array();
     $products = ['products' => $result];
-    exit(json_encode($products));
     return  $products;
 }              
                         

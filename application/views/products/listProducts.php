@@ -18,7 +18,7 @@
                 <td><?=$p['id']?></td>
                 <td><?=$p['name']?></td>
                 <td><?=$p['price']?></td>
-                <td><?=$p['category_id']?></td>
+                <td><?=$p['category']?></td>
             </tr>
             
     </table>
