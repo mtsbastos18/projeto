@@ -31,10 +31,10 @@ class Product extends MY_Controller {
 		$this->view('products/formProduct',$categories);
 	}
 
-    public function listProducts()
-    {
+  public function listProducts()
+  {
 		$products = $this->products->getAll();
-        $this->view('products/listProducts',$products);
+    $this->view('products/listProducts',$products);
 	}
 	
 	public function create()

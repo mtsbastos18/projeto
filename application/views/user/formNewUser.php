@@ -3,7 +3,7 @@
 <html>
     
 <head>
-	<title>My Awesome Login Page</title>
+	<title>Ativar Cadastro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
@@ -23,24 +23,24 @@
                 </div>
                 
 				<div class="d-flex justify-content-center form_container">
-					<form method="post" action="<?= base_url('/user/create')?>">
+					<form method="post" action="<?= base_url('/login/activate')?>">
                         <div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<input type="text" name="name" class="form-control input_user" value="" placeholder="Nome">
+							<input type="text" name="email" class="form-control input_user" value="<?=$email?>" readonly>
 						</div>
                         <div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="text" name="user" class="form-control input_user" value="" placeholder="Usuário">
+							<input type="password" name="password" class="form-control input_user" value="" placeholder="Senha">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="password" class="form-control input_pass" value="" placeholder="Senha">
+							<input type="password" name="passwordConfirm" class="form-control input_pass" value="" placeholder="Confirmar Senha">
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -52,12 +52,7 @@
 					<input type="submit" name="button" value="Cadastrar" class="btn login_btn"/>
 				</div>
 				</form>
-				<div class="mt-4">
-					
-					<div class="d-flex justify-content-center links">
-						<a href="#">Esqueci minha senha</a>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>

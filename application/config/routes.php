@@ -53,5 +53,6 @@ $route['default_controller'] = 'home';
 $route['novo-produto'] = 'product';
 $route['listar-produtos'] = 'product/listProducts';
 $route['login'] = 'login';
+$route['criar-usuario'] = 'user/newUser';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

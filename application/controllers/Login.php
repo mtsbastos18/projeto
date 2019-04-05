@@ -35,6 +35,25 @@ class Login extends CI_Controller {
 
 	}
 
+	public function setPassword($email)
+	{
+		$email = str_replace("%40","@",$email);
+		$data['email'] = $email;
+		$this->load->view("user/formNewUser",$data);
+	}
+
+	public function activate(){
+		$email = $this->input->post("email");
+		$password = $this->input->post('password');
+
+		$params['email'] = $email;
+		$params['password'] = $password;
+
+		if($this->users->activate($params)){
+			redirect('/login?cod=1');
+		}
+	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata('user');

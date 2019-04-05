@@ -102,7 +102,7 @@
       </a>
       <div class="dropdown-menu" >
           <a class="dropdown-item" href="#">Listar Usuários</a>
-          <a class="dropdown-item" href="#">Novo Usuário</a>
+          <a class="dropdown-item" href="<?=base_url('criar-usuario')?>">Novo Usuário</a>
       </div>
       </li>
       

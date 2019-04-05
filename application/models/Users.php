@@ -18,7 +18,7 @@ class Users extends CI_Model
     {
         $where = ['username' => $user];
         $user = $this->find(NULL, $where);
-        if ($password == $this->encryption->decrypt($user['password'])){
+        if ($password == $this->encryption->decrypt($user['password']) && $user['active'] == 1){
             return $user;
         }
         return false;
@@ -34,5 +34,24 @@ class Users extends CI_Model
         }
         return $user;
     }
+
+    public function activate($params){
+        $this->db->where("email",$params['email']);
+        $this->db->where("active",0);
+        
+        $user = $this->db->get('users')->row_array();
+
+        if ($user) {
+            $password = $this->encryption->encrypt($params['password']);
+            $this->db->set('password',$password);
+            $this->db->set('active', 1);
+            $this->db->where('id', $user['id']);
+            if($this->db->update('users')){
+                return true;
+            }
+        }
+    
+    }
+
 }
 ?>
