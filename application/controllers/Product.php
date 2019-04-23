@@ -27,32 +27,72 @@ class Product extends MY_Controller {
 	 */
 	public function index()
 	{
-		$categories = $this->categories->getAll();
-		$this->view('products/formProduct',$categories);
+		$data['categories'] = $this->getCategories();
+		$data['product'] = [
+			'id'=> '',
+			'name' => '',
+			'price' => '',
+			'category' => '',	
+			'description' => '',	
+		];
+		$this->view('products/formProduct',$data);
 	}
 
   public function listProducts()
   {
 		$products = $this->products->getAll();
+
     $this->view('products/listProducts',$products);
 	}
+
+	public function edit($id){
+		$product = $this->products->getById($id);
+		$data['product'] = [
+			'id'=> $product[0]->id,
+			'name' => $product[0]->name,
+			'price' => $product[0]->price,
+			'category' => $product[0]->category_id,	
+			'description' => $product[0]->description,	
+		];
+		$data['categories'] = $this->getCategories();
+		$this->view('products/formProduct',$data);
+	}
+
+	private function getCategories(){
+		$categories = $this->categories->getAll();
+		return $categories;
+	}
+
+	public function delete($id){
+		if($this->products->delete($id)){
+			redirect('/listar-produtos');
+		}
+	}
 	
-	public function create()
-	{
+	public function save()
+	{	
+		$id = $this->input->post("id");
 		$name = $this->input->post("name");
 		$price = $this->input->post("price");
 		$category_id = $this->input->post("category");
 		$description = $this->input->post("description");
 
 		$product = array(
+			'id' => $id,
 			"name" => $name,
 			"price" => $price,
-			"category_id" => $category_id,
 			"description" => $description,
+			"category_id" => $category_id,
 		);
 
-		if($this->products->insert($product)){
-			echo "produto cadastrado";
+		if ($id != "") {
+			if ($this->products->update($product)){
+				redirect('/listar-produtos');
+			}
+		} else {
+			if($this->products->insert($product)){
+				redirect('/listar-produtos');
+			}
 		}
 	}
 }

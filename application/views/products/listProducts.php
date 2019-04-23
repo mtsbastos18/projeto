@@ -13,19 +13,24 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($products as $p) ?>
-            <tr>
+            <?php foreach ($products as $p): ?>
+            <tr class='clickable-row' data-href="product/edit/<?=$p['id']?>">
                 <td><?=$p['id']?></td>
                 <td><?=$p['name']?></td>
                 <td><?=$p['price']?></td>
                 <td><?=$p['category']?></td>
             </tr>
-            
+            <?php endforeach ?>
     </table>
             </div>
         </div>
     </div>
 </div>
+<style>
+    .clickable-row{
+        cursor:pointer;
+    }
+</style>
 <script>
     $(document).ready(function() {
         $('#example').DataTable({
@@ -43,6 +48,9 @@
                     "previous":   "Anterior"
                 },
             }
+        });
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
         });
     } );
 </script>

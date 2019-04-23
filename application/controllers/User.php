@@ -49,7 +49,7 @@ class User extends MY_Controller {
 		 $mail->Password = 'senac2019';
 		 $mail->SMTPSecure = 'tls';
 		 $mail->Port     = 587;
-		 
+		 $mail->CharSet = 'UTF-8';
 		 $mail->setFrom('frameworksapis2019@gmail.com', 'Administrador do sistema');
 		 
 		 // Add a recipient
