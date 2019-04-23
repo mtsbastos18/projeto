@@ -1,6 +1,6 @@
 <?php
 
-class Users extends CI_Model
+class Users extends MY_Model
 {
     public function __construct() {
 		parent:: __construct();
@@ -8,15 +8,9 @@ class Users extends CI_Model
 		$this->load->library('encryption');
 	}
 		
-    public function insert($user)
-    {   
-        $result = $this->db->insert("users", $user);
-        return $result;
-    }   
-
     public function login($user, $password)
     {
-        $where = ['username' => $user];
+        $where = array('username' => $user);
         $user = $this->find(NULL, $where);
         if ($password == $this->encryption->decrypt($user['password']) && $user['active'] == 1){
             return $user;
@@ -26,7 +20,7 @@ class Users extends CI_Model
 
     public function find($field = NULL,$where = NULL)
     {
-        $user = [];
+        $user = array();
         $this->db->where($where);
         if($this->db->get('users')->num_rows() == 1) {
             $this->db->where($where);

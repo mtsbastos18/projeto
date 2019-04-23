@@ -2,11 +2,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
                         
-class Categories extends CI_Model {
+class Categories extends MY_Model {
                         
     public function getAll(){
         $result = $this->db->get('categories')->result_array();
-        $categories = ['categories' => $result];
+        $categories = array('categories' => $result);
         return  $categories;
     }                         
                         

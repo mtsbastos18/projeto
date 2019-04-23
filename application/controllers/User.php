@@ -2,7 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends MY_Controller {
-	
+
+    private $table = "users";
+
 	public function __construct() {
 		parent:: __construct();
 		// Load encryption library
@@ -23,7 +25,7 @@ class User extends MY_Controller {
 			'permission' => $this->input->post("permission"), 
 		);
 
-		if($this->users->insert($params)){
+		if($this->users->insert($this->table,$params)){
 			if($this->sendEmail($params['email'],$params['name'],$params['username'])){	
 				redirect('/criar-usuario?msg=1');
 			} else {
