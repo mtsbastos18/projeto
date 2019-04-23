@@ -53,5 +53,13 @@ class Users extends CI_Model
     
     }
 
+    public function checkUser($email){
+        $user = $this->db->where("email",$email)->get('users')->row_array();
+        if ($user['password'] == "") {
+            return true;
+        }
+        return false;
+    }
+
 }
 ?>

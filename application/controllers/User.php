@@ -24,7 +24,7 @@ class User extends MY_Controller {
 		);
 
 		if($this->users->insert($params)){
-			if($this->sendEmail($params['email'],$params['name'])){	
+			if($this->sendEmail($params['email'],$params['name'],$params['username'])){	
 				redirect('/criar-usuario?msg=1');
 			} else {
 				redirect('/criar-usuario?msg=3');
@@ -34,7 +34,7 @@ class User extends MY_Controller {
 		 }
 	}
 
-	private function sendEmail($email,$name){
+	private function sendEmail($email,$name,$login){
 		 // Load PHPMailer library
 		 $this->load->library('phpmailer_lib');
         
@@ -61,7 +61,7 @@ class User extends MY_Controller {
 		 // Set email format to HTML
 		 $mail->isHTML(true);
 		 // Email body content
-		 $mailContent = "<h1>Foi criado um acesso para você no sistema</h1>
+		 $mailContent = "<h1>Foi criado um acesso para você no sistema com o seguinte Login: ".$login." </h1>
 			 <p>Clique no <a href='".base_url('login/setPassword/').$email."'>link</a> para configurar sua senha</p>";
 
 		 $mail->Body = $mailContent;
