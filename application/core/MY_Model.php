@@ -24,4 +24,7 @@ class MY_Model extends CI_Model
         return $result;
     }
 
+    public function countAll($table){
+        return $this->db->count_all_results($table);
+    }
 }

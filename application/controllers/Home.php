@@ -5,7 +5,9 @@ class Home extends MY_Controller {
 
 	function __construct() 
     {
-        parent::__construct();
+		parent::__construct();
+		$this->load->model('categories');
+		$this->load->model('products');
     }
 	/**
 	 * Index Page for this controller.
@@ -23,13 +25,14 @@ class Home extends MY_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+	{	
 		$numbers = array(
 			'products' => 1000,
 			'orders' => 15,
 			'categories' => 30,
 			'customers' => 1050,
 		);
+		//$this->categories->countAll("products");
 		$this->view('home/home',$numbers);
 	}
 }
