@@ -72,8 +72,8 @@
         </i> <p>Categorias</p>
       </a>
       <div class="dropdown-menu" >
-          <a class="dropdown-item" href="#">Cadastrar Nova</a>
-          <a class="dropdown-item" href="#">Listar todas</a>
+          <a class="dropdown-item" href="<?=base_url('nova-categoria')?>">Cadastrar Nova</a>
+          <a class="dropdown-item" href="<?=base_url('listar-categorias')?>">Listar todas</a>
       </div>
       </li>
       <li class="nav-item dropdown">

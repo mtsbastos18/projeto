@@ -56,3 +56,5 @@ $route['login'] = 'login';
 $route['criar-usuario'] = 'user/newUser';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['nova-categoria'] = 'category';
+$route['listar-categorias'] = 'category/listCategories';
