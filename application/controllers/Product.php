@@ -21,6 +21,7 @@ class Product extends MY_Controller {
 			'price' => '',
 			'category' => '',	
 			'description' => '',	
+			'amount' => ''
         );
 		$this->view('products/formProduct',$data);
 	}
@@ -32,14 +33,16 @@ class Product extends MY_Controller {
 	}
 
 	public function edit($id){
-		$product = $this->products->getById($this->table,$id);
+		$product = $this->products->getProductById($id);
+
 		$data['product'] = array(
-			'id'=> $product[0]->id,
-			'name' => $product[0]->name,
-			'price' => $product[0]->price,
-			'category' => $product[0]->category_id,	
-			'description' => $product[0]->description,	
-        );
+			'id'=> $product[0]['id'],
+			'name' => $product[0]['name'],
+			'price' => $product[0]['price'],
+			'category' => $product[0]['category_id'],	
+			'description' => $product[0]['description'],	
+			'amount' => $product[0]['amount']
+		);
 		$data['categories'] = $this->getCategories();
 		$this->view('products/formProduct',$data);
 	}
@@ -62,6 +65,7 @@ class Product extends MY_Controller {
 		$price = $this->input->post("price");
 		$category_id = $this->input->post("category");
 		$description = $this->input->post("description");
+		$amount = $this->input->post("amount");
 
 		$product = array(
 			'id' => $id,
@@ -72,11 +76,11 @@ class Product extends MY_Controller {
 		);
 
 		if ($id != "") {
-			if ($this->products->update($this->table,$product)){
+			if ($this->products->updateProduct($this->table,$product,$amount)){
 				redirect('/listar-produtos');
 			}
 		} else {
-			if($this->products->insert($this->table,$product)){
+			if($this->products->save($product, $amount)){
 				redirect('/listar-produtos');
 			}
 		}

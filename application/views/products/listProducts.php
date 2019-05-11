@@ -10,6 +10,7 @@
                 <th>Nome</th>
                 <th>Valor</th>
                 <th>Categoria</th>
+                <th>Estoque</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
                 <td><?=$p['name']?></td>
                 <td><?=$p['price']?></td>
                 <td><?=$p['category']?></td>
+                <td><?=$p['amount'] ?></td>
             </tr>
             <?php endforeach ?>
     </table>
