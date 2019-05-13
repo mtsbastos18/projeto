@@ -12,6 +12,10 @@ class Category extends MY_Controller {
     }
 
     public function index(){
+        $data['category'] = array(
+			'id'=> '',
+			'name' => '',
+        );
         $this->view('category/formCategory');
     }
 
