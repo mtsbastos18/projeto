@@ -16,7 +16,7 @@ class Category extends MY_Controller {
 			'id'=> '',
 			'name' => '',
         );
-        $this->view('category/formCategory');
+        $this->view('category/formCategory',$data);
     }
 
     public function listCategories()
